@@ -1,7 +1,11 @@
 import React from 'react'
 
 const App = () => {
-  return <div>kankna</div>
+  return (
+    <div>
+      <div className="wode"></div>
+    </div>
+  )
 }
 
 export default App

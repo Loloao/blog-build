@@ -14,6 +14,22 @@ module.exports = merge(baseConfig, {
     contentBase: '../dist',
     historyApiFallback: true,
   },
+  module: {
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.txs?$/,
+        exclude: /node_modules/,
+        include: ['src'],
+        loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+          emitError: true,
+          fix: true,
+        },
+      },
+    ],
+  },
   devtool: 'cheap-eval-inline-source-map',
   plugins: [new webpack.HotModuleReplacementPlugin()],
 })
