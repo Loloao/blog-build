@@ -20,7 +20,7 @@ module.exports = merge(baseConfig, {
         enforce: 'pre',
         test: /\.txs?$/,
         exclude: /node_modules/,
-        include: ['src'],
+        include: [getAbsolutePath('src')],
         loader: 'eslint-loader',
         options: {
           emitWarning: true,
