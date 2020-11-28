@@ -1,0 +1,23 @@
+@import '@styles/variables';
+
+.header {
+  background-color: $header-background;
+  display: flex;
+  align-items: center;
+  padding: 30px 50px;
+  box-sizing: border-box;
+  height: $header-height;
+  color: $font-color;
+  font-size: $header-title-font-size;
+  display: flex;
+  justify-content: space-between;
+  .title {
+    color: $font-color;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color $transition-time-1;
+    &:hover {
+      color: $hover-font-color;
+    }
+  }
+}
