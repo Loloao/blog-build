@@ -4,15 +4,17 @@
   background-color: $header-background;
   display: flex;
   align-items: center;
-  padding: 30px 50px;
+  padding: $header-padding-col $header-padding-row;
   box-sizing: border-box;
   height: $header-height;
-  color: $font-color;
+  color: $primary-font-color;
   font-size: $header-title-font-size;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   .title {
-    color: $font-color;
+    position: absolute;
+    left: $header-padding-row;
+    color: $primary-font-color;
     font-weight: bold;
     cursor: pointer;
     transition: color $transition-time-1;

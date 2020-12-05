@@ -6,7 +6,7 @@ interface props {
 }
 
 const HomeListItem = (props: props) => {
-  return <li>{props.issue.title}</li>
+  return <div>{props.issue.title}</div>
 }
 
 export default HomeListItem

@@ -18,10 +18,15 @@
   list-style: none;
   margin-left: 20px;
   cursor: pointer;
-  transition: color $transition-time-2;
+  transition: opacity $transition-time-2;
   color: $font-color;
   &:hover {
-    color: $hover-font-color;
+    opacity: .7;
+    color: $primary-font-color;
     border-bottom: 2px solid #eee;
+  }
+  .navItemIcon {
+    color: $primary-font-color;
+    margin-right: 10px;
   }
 }

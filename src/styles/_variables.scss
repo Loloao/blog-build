@@ -1,4 +1,4 @@
-$background: rgb(244, 208, 0);
+$background: #2e2e2e;
 $primary: rgb(229, 131, 8);
 $primary-1: rgb(220, 87, 18);
 $primary-2: rgb(138, 151, 123);
@@ -7,15 +7,18 @@ $transition-time-1: 0.15s;
 $transition-time-2: 0.35s;
 $transition-time-3: 0.55s;
 
-$font-color: #00142f;
+$font-color: white;
+$primary-font-color: #facc4f;
 $hover-font-color: #504e63;
 
 $border-color: #a88661;
 
 // Header
-$header-background: #ead6bd;
+$header-background: #2e2e2e;
 $header-height: 80px;
 $header-title-font-size: 50px;
+$header-padding-col: 30px;
+$header-padding-row: 50px;
 
 // Content
 $content-background: #f5fafa;

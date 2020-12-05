@@ -1,6 +1,7 @@
 declare namespace StylesScssNamespace {
   export interface IStylesScss {
     navItem: string
+    navItemIcon: string
     navList: string
   }
 }

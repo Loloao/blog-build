@@ -7,7 +7,6 @@ const Header = () => {
   const history = useHistory()
 
   const jumpToHome = () => {
-    console.log(history, 'history')
     history.push('/')
   }
 

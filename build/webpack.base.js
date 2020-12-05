@@ -24,7 +24,7 @@ const webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.(jpg|jpeg|bmp|png|webp|gif)$/,
+        test: /\.(jpg|jpeg|bmp|png|webp|gif|svg|eot|woff|woff2|ttf)$/,
         loader: 'url-loader',
         options: {
           limit: 8 * 1024,
@@ -74,6 +74,12 @@ const webpackConfig = {
       {
         test: /\.css$/,
         include: /normalize.css/,
+        loader: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader']
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        exclude: /normalize.css/,
         loader: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
