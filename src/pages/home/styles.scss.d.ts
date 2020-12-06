@@ -1,6 +1,7 @@
 declare namespace StylesScssNamespace {
   export interface IStylesScss {
     'home-wrapper': string
+    'main-wrapper': string
   }
 }
 

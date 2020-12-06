@@ -6,6 +6,7 @@ import Home from './pages/home'
 import Header from './components/header'
 import Content from './components/content'
 import Container from './components/container'
+import './custom.d.ts'
 import './styles'
 
 const Tags = Loadable(() => import('./pages/tags'))

@@ -3,5 +3,8 @@
   margin: 0 auto;
   background-color: $home-background;
   width: 1000px;
-  height: 1000px;
+}
+
+.main-wrapper {
+  padding: $home-padding;
 }

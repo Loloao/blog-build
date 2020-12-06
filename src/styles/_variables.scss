@@ -8,20 +8,48 @@ $transition-time-2: 0.35s;
 $transition-time-3: 0.55s;
 
 $font-color: white;
+$font-color-1: #ddd;
+$font-color-2: #ccc;
+$font-size-content: 14px;
 $primary-font-color: #facc4f;
+$link-font-color: #2077d3;
+$link-font-hover-color: #29b0eb;
 $hover-font-color: #504e63;
-
 $border-color: #a88661;
 
 // Header
 $header-background: #2e2e2e;
-$header-height: 80px;
+$header-height: 50px;
 $header-title-font-size: 50px;
 $header-padding-col: 30px;
 $header-padding-row: 50px;
 
+$nav-height: 40px;
+$nav-item-bottom: linear-gradient(to right, #faa964, #e6aa49, #facc4f);
+
 // Content
-$content-background: #f5fafa;
+$content-background: #e9ebee;
 
 // Home
-$home-background: #6d929b;
+$home-background: white;
+$home-padding: 15px;
+$home-item-border-radius: 5px;
+$home-item-margin-bottom: 10px;
+$home-item-col-padding: 10px;
+$home-item-row-padding: 15px;
+$home-item-title-font-size: 22px;
+
+$home-content-padding-top: 5px;
+$home-content-font-size: 14px;
+$home-content-line-height: 18px;
+$home-content-lines-num: 4;
+$home-content-image-width: 200px;
+$home-content-image-height: 145px;
+$home-content-border-radius: 5px;
+$home-content-margin-left: 10px;
+
+$home-footer-margin-top: 7px;
+$home-footer-font-size: 13px;
+$home-footer-user-color: #2077d3;
+$home-footer-user-margin-right: 5px;
+$home-footer-date-color: #bbb;

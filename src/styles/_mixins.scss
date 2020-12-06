@@ -1,0 +1,8 @@
+@mixin multipleLineEllipsis($linesNum, $lineHeight) {
+  height: $lineHeight * $linesNum;
+  line-height: $lineHeight;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $linesNum;
+  overflow: hidden;
+}

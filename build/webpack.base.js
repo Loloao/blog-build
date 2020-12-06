@@ -58,7 +58,7 @@ const webpackConfig = {
         exclude: /node_modules/,
         loader: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          '@teamsupercell/typings-for-css-modules-loader',
+          // '@teamsupercell/typings-for-css-modules-loader',
           {
             loader: 'css-loader',
             options: {

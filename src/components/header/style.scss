@@ -19,7 +19,7 @@
     cursor: pointer;
     transition: color $transition-time-1;
     &:hover {
-      color: $hover-font-color;
+      color: $nav-item-bottom;
     }
   }
 }

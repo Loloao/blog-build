@@ -8,13 +8,13 @@ import HomeListItem from './components/listItem'
 const Home = () => {
   const [issueList, setIssueList] = useState<apiIssue[]>([])
   useEffect(() => {
-    getIssues.then((res) => {
+    getIssues().then((res) => {
       setIssueList(res)
     })
   }, [])
   return (
     <div className={styles['home-wrapper']}>
-      <ul>
+      <ul className={styles['main-wrapper']}>
         {issueList.map((v) => {
           return (
             <li key={v.id}>

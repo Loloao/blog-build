@@ -54,8 +54,24 @@ export interface assignee {
   url: string
 }
 
+export interface issueComment {
+  url: string
+  html_url: string
+  issue_url: string
+  id: number
+  node_id: string
+  user: user
+  created_at: string
+  updated_at: string
+  author_association: string
+  body: string
+  performed_via_github_app: null
+}
+
 export interface apiIssue {
   url: string
+  img_src?: string
+  commentArr?: issueComment[]
   repository_url: string
   labels_url: string
   comments_url: string
