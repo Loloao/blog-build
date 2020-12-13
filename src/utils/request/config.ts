@@ -1,6 +1,6 @@
 const USER_NAME = 'Loloao'
 const REPO_NAME = 'my-blog'
-const HOME_PER_PAGE = '10'
+const HOME_PER_PAGE = '5'
 const HOME_PAGE = '1'
 
 export const config = {

@@ -3,8 +3,10 @@
   margin: 0 auto;
   background-color: $home-background;
   width: 1000px;
+  overflow: hidden;
+  padding: $home-padding;
 }
 
 .main-wrapper {
-  padding: $home-padding;
+  // padding: $home-padding;
 }

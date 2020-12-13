@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Loadable from '@loadable/component'
 
 import Home from './pages/home'
-import Header from './components/header'
-import Content from './components/content'
-import Container from './components/container'
+import Header from './layout/header'
+import Content from './layout/content'
+import Container from './layout/container'
 import './custom.d.ts'
 import './styles'
 

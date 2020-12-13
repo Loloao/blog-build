@@ -1,0 +1,28 @@
+@import '@/components/styles';
+
+.pagination-wrapper {
+  float: right;
+  .pagination-list {
+    display: flex;
+    .list-item {
+      width: 30px;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 5px;
+      line-height: 30px;
+      text-align: center;
+      margin-left: 5px;
+      color: black;
+      cursor: pointer;
+      transition: color $transition-time-2;
+      transition: border-color $transition-time-2;
+      transition: background-color $transition-time-2;
+      &:hover {
+        color: $primary;
+        background-color: $background;
+        border-color: $primary;
+        font-weight: bold;
+      }
+    }
+  }
+}
