@@ -29,7 +29,7 @@
       }
     }
     .issueItemTitle {
-      color: $font-color;
+      color: $primary-blue;
       font-weight: bold;
       font-size: $home-item-title-font-size;
       cursor: pointer;
@@ -44,7 +44,7 @@
       cursor: pointer;
       transition: color $transition-time-2;
       &:hover {
-        color: $font-color;
+        color: $primary-blue;
         text-decoration: underline;
       }
       @include multipleLineEllipsis($home-content-lines-num, $home-content-line-height);

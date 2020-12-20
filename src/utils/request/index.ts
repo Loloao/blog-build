@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { config, url } from './config'
+import { config, url, INIT_HOME_PAGE, INIT_HOME_PER_PAGE } from './config'
 import { apiIssue, issueComment } from './types'
 import { getIssueImageSrc } from '@/utils'
 
@@ -10,8 +10,9 @@ const AxiosIns = Axios.create({
   }
 })
 
-export const getIssues = async () => {
-  const res = await AxiosIns.get<apiIssue[]>(url.GET_PROJECT_ISSUES)
+export const getIssues = async (currentPage?: number) => {
+  currentPage = typeof currentPage !== 'number' ? INIT_HOME_PAGE : currentPage
+  const res = await AxiosIns.get<apiIssue[]>(url.getProjectIssueUrl(currentPage, INIT_HOME_PER_PAGE))
   const issueArr = res.data
   for (let i = 0; i < issueArr.length; i++) {
     const { comments_url, comments } = issueArr[i]
@@ -28,3 +29,13 @@ export const getIssues = async () => {
   }
   return issueArr
 }
+
+const getMoreIssues = () => {
+  let currentPage = INIT_HOME_PAGE
+  return async function () {
+    currentPage += 1
+    return getIssues(currentPage)
+  }
+}
+
+export const getMore = getMoreIssues()
