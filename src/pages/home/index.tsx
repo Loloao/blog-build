@@ -9,6 +9,7 @@ import ShowMore from '@/components/showMore'
 const Home = () => {
   const [issueList, setIssueList] = useState<apiIssue[]>([])
   const [isMore, setIsMore] = useState<boolean>(true)
+  const [isShowMoreLoading, setIsShowMoreLoading] = useState<boolean>(false)
   useEffect(() => {
     getIssues().then((res) => {
       setIssueList(res)
@@ -16,7 +17,9 @@ const Home = () => {
   }, [])
 
   const showMore = (): void => {
+    setIsShowMoreLoading(true)
     getMore().then((res) => {
+      setIsShowMoreLoading(false)
       if (res.length > 0) {
         const AllIssues = issueList.concat(res)
         setIssueList(AllIssues)
@@ -38,7 +41,7 @@ const Home = () => {
           )
         })}
       </ul>
-      <ShowMore onShowMore={showMore} isMore={isMore} />
+      <ShowMore onShowMore={showMore} isMore={isMore} isLoading={isShowMoreLoading} />
     </div>
   )
 }

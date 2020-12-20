@@ -1,3 +1,4 @@
-import * as PageLoading from './pageLoading'
+import PageLoading from './pageLoading'
+import RequestLoading from './requestLoading'
 
-export { PageLoading }
+export { PageLoading, RequestLoading }
