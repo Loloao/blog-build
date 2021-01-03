@@ -49,7 +49,7 @@ const webpackConfig = {
         exclude: /node-modules/,
         include: getAbsolutePath('../src'),
         options: {
-          plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-transform-runtime'],
+          plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-transform-runtime', 'transform-class-properties'],
           presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
         }
       },

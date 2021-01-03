@@ -11,6 +11,7 @@
   font-size: $header-title-font-size;
   display: flex;
   justify-content: center;
+  border-bottom: $header-border-bottom;
   .title {
     position: absolute;
     left: $header-padding-row;

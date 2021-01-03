@@ -2,6 +2,8 @@ import React from 'react'
 import { apiIssue } from '@/utils/request/types'
 import style from './styles.m.scss'
 import dateAgo from '@/utils/time/dateAgo'
+import { stringifySearch } from '@/utils'
+import { useHistory } from 'react-router-dom'
 
 interface props {
   issue: apiIssue
@@ -15,17 +17,11 @@ const HomeListItem = (props: props) => {
       body,
       img_src,
       user: { login },
-      updated_at
+      updated_at,
+      number
     }
   } = props
-
-  const getImage = (img_src: string | undefined) => {
-    if (img_src) {
-      return <div className={style['mainImg']} style={{ backgroundImage: `url(${img_src})` }}></div>
-    } else {
-      return null
-    }
-  }
+  const history = useHistory()
 
   return (
     <div className={style['issueItem']}>
@@ -39,7 +35,7 @@ const HomeListItem = (props: props) => {
             )
           })}
         </div>
-        <span className={style['issueItemTitle']}>{title}</span>
+        <span className={style['issueItemTitle']} onClick={jumpToIssueDetail}>{title}</span>
         <p className={style['issueItemContent']}>{body}</p>
         <div className={style['issueItemFooter']}>
           <span className={style['issueUser']}>{login}</span>
@@ -49,6 +45,18 @@ const HomeListItem = (props: props) => {
       {getImage(img_src)}
     </div>
   )
+
+  function jumpToIssueDetail () {
+    history.push({pathname: '/detail', search: `${stringifySearch({issueNumber: number})}`})
+  }
+
+  function getImage (img_src?: string) {
+    if (img_src) {
+      return <div className={style['mainImg']} style={{ backgroundImage: `url(${img_src})` }}></div>
+    } else {
+      return null
+    }
+  }
 }
 
 export default HomeListItem

@@ -1,0 +1,89 @@
+@import '@styles';
+
+@mixin base {
+    margin: 10px 0;
+}
+
+$title-color: $primary;
+$title-boder: 1px solid $primary;
+
+.reader {
+    color: white;
+    h1 {
+        font-size: 45px;
+        color: $title-color;
+        border-bottom: $title-boder;
+        line-height: 70px;
+        text-align: center;
+        @include base
+    }
+    h2 {
+        font-size: 35px;
+        line-height: 50px;
+        border-bottom: $title-boder;
+        color: $title-color;
+        @include base
+    }
+    h3 {
+        font-size: 18px;
+        color: $title-color;
+        @include base
+    }
+    p {
+        line-height: 24px;
+        color: $font-color-1;
+        @include base;
+        width: 100%;
+    }
+    code {
+        padding: 1px 5px;
+        border-radius: 5px;
+        margin: 0px 3px;
+        background-color: #444;
+    }
+    blockquote {
+        padding: 10px;
+        border-left: 4px solid $primary-red;
+        @include base
+    }
+    ul, ol {
+        @include base;
+        li {
+            @include base;
+            margin-left: 40px;
+        }
+    }
+    ul {
+        li {
+            position: relative;
+            &::after {
+                content: '';
+                height: 5px;
+                width: 5px;
+                position: absolute;
+                border-radius: 5px;
+                background-color: $primary;
+                left: -20px;
+                margin-top: 7px;
+            }
+        }
+    }
+    ol {
+        li {
+            position: relative;
+        }
+    }
+
+    pre {
+        padding: 10px 20px;
+        // border: 1px solid $primary-blue;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, .3);
+        box-shadow: 0px 0px 3px $primary-blue;
+        margin: 0 3px;
+        code {
+            background: none;
+            color: #ccc;
+        }
+    }
+}

@@ -6,3 +6,11 @@
   -webkit-line-clamp: $linesNum;
   overflow: hidden;
 }
+
+@mixin readableWrapper($width: 800px, $padding: 0px) {
+  margin: 0 auto;
+  background-color: $background;
+  width: $width;
+  overflow: hidden;
+  padding: $padding;
+}

@@ -12,6 +12,7 @@ import './styles'
 const Tags = Loadable(() => import('./pages/tags'))
 const Categories = Loadable(() => import('./pages/categories'))
 const About = Loadable(() => import('./pages/about'))
+const Detail = Loadable(() => import('./pages/detail'))
 // const Home = Loadable(() => import('./pages/home'))
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Header />
         <Content>
           <Switch>
+            <Route exact path="/detail" component={Detail} />
             <Route exact path="/tags" component={Tags} />
             <Route exact path="/categories" component={Categories} />
             <Route exact path="/about" component={About} />

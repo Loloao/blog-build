@@ -1,10 +1,6 @@
 @import '@styles';
 .home-wrapper {
-  margin: 0 auto;
-  background-color: $home-background;
-  width: 1000px;
-  overflow: hidden;
-  padding: $home-padding;
+  @include readableWrapper();
 }
 
 .main-wrapper {

@@ -2,6 +2,7 @@ import Axios from 'axios'
 import { config, url, INIT_HOME_PAGE, INIT_HOME_PER_PAGE } from './config'
 import { apiIssue, issueComment } from './types'
 import { getIssueImageSrc } from '@/utils'
+import { IssueDetail } from '@/utils/classes'
 
 const AxiosIns = Axios.create({
   baseURL: config.BASE_URL,
@@ -12,8 +13,8 @@ const AxiosIns = Axios.create({
 
 export const getIssues = async (currentPage?: number) => {
   currentPage = typeof currentPage !== 'number' ? INIT_HOME_PAGE : currentPage
-  const res = await AxiosIns.get<apiIssue[]>(url.getProjectIssueUrl(currentPage, INIT_HOME_PER_PAGE))
-  const issueArr = res.data
+  const res = await AxiosIns.get<IssueDetail[]>(url.getProjectIssueUrl(currentPage, INIT_HOME_PER_PAGE))
+  const issueArr = res.data.map(v => IssueDetail.create(v))
   for (let i = 0; i < issueArr.length; i++) {
     const { comments_url, comments } = issueArr[i]
     let commentsList: issueComment[] = []
@@ -37,5 +38,8 @@ const getMoreIssues = () => {
     return getIssues(currentPage)
   }
 }
-
 export const getMore = getMoreIssues()
+
+export const getIssueDetail = (issueNumber: number | string) => {
+  return AxiosIns.get<IssueDetail>(url.getIssueDetailUrl(issueNumber)).then(res => IssueDetail.create(res.data))
+}

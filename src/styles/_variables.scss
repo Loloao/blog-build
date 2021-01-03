@@ -1,25 +1,30 @@
 @import 'baseValue.scss';
+
+$background: #2e2e2e;
+$border: 1px solid $primary-red;
 // Header
-$header-background: #2e2e2e;
+$header-background: $background;
 $header-height: 50px;
 $header-title-font-size: 50px;
 $header-padding-col: 30px;
 $header-padding-row: 50px;
+$header-border-bottom: $border;
 
 $nav-height: 40px;
 $nav-item-bottom: linear-gradient(to right, #faa964, #e6aa49, #facc4f);
 
 // Content
-$content-background: #e9ebee;
+$content-background:$background;
 
 // Home
-$home-background: white;
-$home-padding: 15px;
-$home-item-border-radius: 5px;
-$home-item-margin-bottom: 10px;
+$home-background: $background;
+$home-padding: 1px;
+$home-item-border-radius: 0px;
+$home-item-margin-bottom: 2px;
 $home-item-col-padding: 10px;
-$home-item-row-padding: 15px;
+$home-item-row-padding: 0px;
 $home-item-title-font-size: 22px;
+$home-item-border-bottom: $border;
 
 $home-content-padding-top: 5px;
 $home-content-font-size: 14px;
