@@ -71,6 +71,12 @@ $title-boder: 1px solid $primary;
     ol {
         li {
             position: relative;
+            .ol-li-index {
+                position: absolute;
+                left: -20px;
+                top: 3px;
+                color: $primary;
+            }
         }
     }
 
