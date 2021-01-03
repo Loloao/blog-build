@@ -1,12 +1,19 @@
 import React, {useLayoutEffect} from 'react'
 import ReactMarkdown from 'react-markdown'
 import styles from './styles.module.scss'
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {a11yDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 interface Props {
     text: string
 }
 
 const MarkdownReader = (props: Props) => {
+    const renderers = {
+        code: ({language, value}: {language: string, value: string}) => {
+            return <SyntaxHighlighter style={a11yDark} language={language} children={value} />
+        }
+    }
     const {text} = props
     const getOlLiIndexElem = (index: number) => {
         const wrapper = document.createElement('div')
@@ -23,7 +30,7 @@ const MarkdownReader = (props: Props) => {
         })
     })
     return <>
-        <ReactMarkdown children={text} className={styles['reader']} />
+        <ReactMarkdown children={text} className={styles['reader']} renderers={renderers} />
     </>
 }
 

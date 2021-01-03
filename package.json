@@ -36,6 +36,7 @@
     "@types/loadable__component": "^5.13.1",
     "@types/react-loadable": "^5.5.4",
     "@types/react-router-dom": "^5.1.6",
+    "@types/react-syntax-highlighter": "^13.5.0",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "autoprefixer": "^10.0.2",
@@ -84,6 +85,7 @@
     "react-loadable": "^5.5.0",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
+    "react-syntax-highlighter": "^15.4.3",
     "remark-gfm": "^1.0.0"
   }
 }

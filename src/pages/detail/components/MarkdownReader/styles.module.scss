@@ -44,6 +44,9 @@ $title-boder: 1px solid $primary;
     blockquote {
         padding: 10px;
         border-left: 4px solid $primary-red;
+        background-color: #555;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
         @include base
     }
     ul, ol {
@@ -82,10 +85,10 @@ $title-boder: 1px solid $primary;
 
     pre {
         padding: 10px 20px;
-        // border: 1px solid $primary-blue;
+        border: 1px solid $primary-blue;
         border-radius: 5px;
         background-color: rgba(0, 0, 0, .3);
-        box-shadow: 0px 0px 3px $primary-blue;
+        // box-shadow: inset 0px 0px 3px 1px $primary-blue;
         margin: 0 3px;
         code {
             background: none;
