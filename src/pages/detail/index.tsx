@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { useHistory } from 'react-router-dom'
 import { getIssueDetail } from '@/utils/request'
@@ -12,13 +12,15 @@ const Detail = () => {
   const history = useHistory()
   const query = parseSearch(history.location.search)
   useEffect(() => {
-    getIssueDetail(query.issueNumber).then(res => {
+    getIssueDetail(query.issueNumber).then((res) => {
       setIssueDetail(res)
     })
   }, [])
-  return <div className={styles['detail-wrapper']}>
-    <MarkdownReader text={issueDetail.body} />
-  </div>
+  return (
+    <div className={styles['detail-wrapper']}>
+      <MarkdownReader text={issueDetail.body} />
+    </div>
+  )
 }
 
 export default Detail

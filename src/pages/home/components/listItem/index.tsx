@@ -35,7 +35,9 @@ const HomeListItem = (props: props) => {
             )
           })}
         </div>
-        <span className={style['issueItemTitle']} onClick={jumpToIssueDetail}>{title}</span>
+        <span className={style['issueItemTitle']} onClick={jumpToIssueDetail}>
+          {title}
+        </span>
         <p className={style['issueItemContent']}>{body}</p>
         <div className={style['issueItemFooter']}>
           <span className={style['issueUser']}>{login}</span>
@@ -46,11 +48,11 @@ const HomeListItem = (props: props) => {
     </div>
   )
 
-  function jumpToIssueDetail () {
-    history.push({pathname: '/detail', search: `${stringifySearch({issueNumber: number})}`})
+  function jumpToIssueDetail() {
+    history.push({ pathname: '/detail', search: `${stringifySearch({ issueNumber: number })}` })
   }
 
-  function getImage (img_src?: string) {
+  function getImage(img_src?: string) {
     if (img_src) {
       return <div className={style['mainImg']} style={{ backgroundImage: `url(${img_src})` }}></div>
     } else {
