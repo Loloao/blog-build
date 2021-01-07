@@ -14,7 +14,7 @@ const Tags = () => {
   }, [])
   return (
     <div className={styles['tags-wrapper']}>
-      <h2>标签</h2>
+      <h2 className={styles['tags-title']}>标签</h2>
       <ul className={styles['tags-list']}>
         {allLabels.map((v) => {
           return <LabelItem labelDetail={v} key={v.id} />
