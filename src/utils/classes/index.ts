@@ -1,7 +1,5 @@
 import IssueDetail from './issueDetail'
+import LabelDetail from './labelDetail'
 import User from './user'
 
-export {
-    IssueDetail,
-    User
-}
+export { IssueDetail, LabelDetail, User }

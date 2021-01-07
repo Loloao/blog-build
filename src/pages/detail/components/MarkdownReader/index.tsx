@@ -33,11 +33,7 @@ const MarkdownReader = (props: Props) => {
         })
       })
   })
-  return (
-    <>
-      <ReactMarkdown children={text} className={styles['reader']} renderers={renderers} />
-    </>
-  )
+  return <ReactMarkdown children={text} className={styles['reader']} renderers={renderers} />
 }
 
 export default MarkdownReader

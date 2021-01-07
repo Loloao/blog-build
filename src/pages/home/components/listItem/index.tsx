@@ -38,7 +38,9 @@ const HomeListItem = (props: props) => {
         <span className={style['issueItemTitle']} onClick={jumpToIssueDetail}>
           {title}
         </span>
-        <p className={style['issueItemContent']}>{body}</p>
+        <p className={style['issueItemContent']} onClick={jumpToIssueDetail}>
+          {body}
+        </p>
         <div className={style['issueItemFooter']}>
           <span className={style['issueUser']}>{login}</span>
           <span className={style['issueUpdateDate']}>更新于{dateAgo(Date.parse(updated_at))}</span>

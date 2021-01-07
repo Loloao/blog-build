@@ -1,0 +1,9 @@
+@import '@styles';
+.tags-wrapper {
+  @include readableWrapper();
+  .tags-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,19 @@
+@import '@styles';
+
+.item-wrapper {
+  height: $label-item-height;
+  line-height: $label-item-line-height;
+  padding: $label-item-padding;
+  border-radius: $label-item-border-radius;
+  border: $label-item-border;
+  font-size: $label-item-font-size;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: $label-item-color;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: $transition-time-1;
+  &:hover {
+    opacity: 1;
+  }
+}

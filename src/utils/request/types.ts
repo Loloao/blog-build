@@ -2,7 +2,7 @@ export interface issues {
   name: string
 }
 
-export interface issueLabel {
+export interface IssueLabel {
   id: number
   node_id: string
   url: string
@@ -82,7 +82,7 @@ export interface apiIssue {
   number: number
   title: string
   user: user
-  labels: issueLabel[]
+  labels: IssueLabel[]
   state: string
   locked: boolean
   assignee: assignee | null
