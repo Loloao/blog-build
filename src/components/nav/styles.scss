@@ -22,6 +22,9 @@
   cursor: pointer;
   transition: color $transition-time-2;
   color: $font-color;
+  &.activeItem {
+    color: $primary-font-color;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -33,7 +36,7 @@
     z-index: 1;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.5s ease-in-out;
+    transition: transform $transition-time-1 ease-in-out;
   }
   &:hover {
     color: $primary-font-color;

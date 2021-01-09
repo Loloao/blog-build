@@ -5,7 +5,6 @@ import { getIssueDetail } from '@/utils/request'
 import { parseSearch } from '@/utils'
 import { IssueDetail } from '@/utils/classes'
 import MarkdownReader from './components/MarkdownReader'
-import gfm from 'remark-gfm'
 
 const Detail = () => {
   const [issueDetail, setIssueDetail] = useState<IssueDetail>(IssueDetail.create())

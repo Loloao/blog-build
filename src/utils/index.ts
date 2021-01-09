@@ -16,7 +16,7 @@ export const getIssueImageSrc = (commentBody: string): string => {
 
 export const stringifySearch = (pathObj: obj): string => {
   const arr: string[] = []
-  Object.keys(pathObj).forEach(v => {
+  Object.keys(pathObj).forEach((v) => {
     arr.push(`${v}=${pathObj[v]}`)
   })
   return `?${arr.join('&')}`
@@ -25,7 +25,7 @@ export const stringifySearch = (pathObj: obj): string => {
 export const parseSearch = (search: string): obj => {
   const arr: string[] = search.slice(1).split('&')
   const result = Object.create(null)
-  arr.forEach(v => {
+  arr.forEach((v) => {
     const itemArr = v.split('=')
     result[itemArr[0]] = itemArr[1]
   })

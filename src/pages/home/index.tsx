@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { apiIssue } from '@/utils/request/types'
+import { Route, Redirect } from 'react-router-dom'
 
 import styles from './styles.scss'
 import { getIssues, getMore } from '@/utils/request'
-import HomeListItem from './components/listItem'
+import IssueList from '@/components/IssueList'
 import ShowMore from '@/components/showMore'
 
 const Home = () => {
@@ -31,16 +32,7 @@ const Home = () => {
   }
   return (
     <div className={styles['home-wrapper']}>
-      <ul className={styles['main-wrapper']}>
-        {issueList.map((v) => {
-          console.log(v.id, 'v-id')
-          return (
-            <li key={v.id}>
-              <HomeListItem issue={v} />
-            </li>
-          )
-        })}
-      </ul>
+      <IssueList issueList={issueList} />
       <ShowMore onShowMore={showMore} isMore={isMore} isLoading={isShowMoreLoading} />
     </div>
   )

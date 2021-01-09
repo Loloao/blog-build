@@ -3,6 +3,7 @@ declare namespace StylesScssNamespace {
     navItem: string
     navItemIcon: string
     navList: string
+    activeItem: string
   }
 }
 
