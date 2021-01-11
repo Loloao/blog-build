@@ -1,12 +1,12 @@
 import React from 'react'
-import { apiIssue } from '@/utils/request/types'
+import { IssueDetail } from '@/utils/classes'
 import style from './styles.m.scss'
 import dateAgo from '@/utils/time/dateAgo'
 import { stringifySearch } from '@/utils'
 import { useHistory } from 'react-router-dom'
 
 interface props {
-  issueList: apiIssue[]
+  issueList: IssueDetail[]
 }
 
 const HomeListItem = (props: props) => {

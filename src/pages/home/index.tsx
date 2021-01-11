@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { apiIssue } from '@/utils/request/types'
-import { Route, Redirect } from 'react-router-dom'
+import { IssueDetail } from '@/utils/classes'
 
 import styles from './styles.scss'
 import { getIssues, getMore } from '@/utils/request'
@@ -8,7 +7,7 @@ import IssueList from '@/components/IssueList'
 import ShowMore from '@/components/showMore'
 
 const Home = () => {
-  const [issueList, setIssueList] = useState<apiIssue[]>([])
+  const [issueList, setIssueList] = useState<IssueDetail[]>([])
   const [isMore, setIsMore] = useState<boolean>(true)
   const [isShowMoreLoading, setIsShowMoreLoading] = useState<boolean>(false)
   useEffect(() => {
@@ -17,7 +16,7 @@ const Home = () => {
     })
   }, [])
 
-  const showMore = (): void => {
+  const showMore = () => {
     setIsShowMoreLoading(true)
     getMore().then((res) => {
       setIsShowMoreLoading(false)
