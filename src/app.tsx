@@ -9,6 +9,7 @@ import Tags from './pages/tags'
 import Categories from './pages/categories'
 import About from './pages/about'
 import Detail from './pages/detail'
+import ShowIssueList from './pages/ShowIssueList'
 import './custom.d.ts'
 import './styles'
 
@@ -24,6 +25,7 @@ const App = () => {
             <Route exact path="/about" component={About} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/detail" component={Detail} />
+            <Route exact path="/issueList" component={ShowIssueList} />
             <Redirect exact path="/" to="/home" />
           </Switch>
         </Content>

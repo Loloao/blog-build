@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import IssueList from '@/components/IssueList'
-import { apiIssue } from '@/utils/request/types'
 import { IssueDetail } from '@/utils/classes'
+import { useHistory } from 'react-router-dom'
 
-interface Props {
-  getList(): Promise<apiIssue[]>
-}
-
-function ShowIssueList(props: Props) {
-  const { getList } = props
+function ShowIssueList() {
   const [list, setList] = useState<IssueDetail[]>([])
   useEffect(() => {
-    getList().then(res => {
-      setList(res.map(IssueDetail.create))
-    })
+    // getList().then(res => {
+    //   setList(res)
+    // })
   })
 
   return <IssueList issueList={list} />
