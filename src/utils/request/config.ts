@@ -12,5 +12,7 @@ export const url = {
   getProjectIssueUrl: (homePage: number, homePerPageNum: number): string =>
     `/repos/${USER_NAME}/${REPO_NAME}/issues?page=${homePage}&per_page=${homePerPageNum}`,
   getIssueDetailUrl: (issueNumber: number | string): string => `/repos/${USER_NAME}/${REPO_NAME}/issues/${issueNumber}`,
-  getLabelsUrl: (): string => `/repos/${USER_NAME}/${REPO_NAME}/labels`
+  getLabelsUrl: (): string => `/repos/${USER_NAME}/${REPO_NAME}/labels`,
+  getSelectLabelIssuesUrl: (labelListStr: string): string =>
+    `/repos/${USER_NAME}/${REPO_NAME}/issues?labels=${labelListStr}`
 }

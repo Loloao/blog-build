@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import { config, url, INIT_HOME_PAGE, INIT_HOME_PER_PAGE } from './config'
-import { apiIssue, issueComment, IssueLabel } from './types'
+import { issueComment, IssueLabel } from './types'
 import { getIssueImageSrc } from '@/utils'
 import { IssueDetail, LabelDetail } from '@/utils/classes'
 
@@ -40,10 +40,16 @@ const getMoreIssues = () => {
 }
 export const getMore = getMoreIssues()
 
-export const getIssueDetail = (issueNumber: number | string) => {
+export const getIssueDetail = (issueNumber: number | string): Promise<IssueDetail> => {
   return AxiosIns.get<IssueDetail>(url.getIssueDetailUrl(issueNumber)).then((res) => IssueDetail.create(res.data))
 }
 
-export const getAllLabels = () => {
+export const getAllLabels = (): Promise<IssueLabel[]> => {
   return AxiosIns.get<IssueLabel[]>(url.getLabelsUrl()).then((res) => res.data.map(LabelDetail.create))
+}
+
+export const getSelectLabelIssues = (labelList: string): Promise<IssueDetail[]> => {
+  return AxiosIns.get<IssueDetail[]>(url.getSelectLabelIssuesUrl(labelList)).then((res) =>
+    res.data.map(IssueDetail.create)
+  )
 }

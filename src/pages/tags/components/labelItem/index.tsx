@@ -14,8 +14,8 @@ const LabelItem = (props: Props) => {
     labelDetail: { name, color }
   } = props
 
-  const jumpToIssueList = () => {
-    history.push({ pathname: '/issueList', search: stringifySearch({ source: 'tags' }) })
+  const jumpToIssueList = (name: string) => {
+    history.push({ pathname: '/issueList', search: stringifySearch({ source: 'tags', labelNames: name }) })
   }
 
   return (
@@ -25,7 +25,7 @@ const LabelItem = (props: Props) => {
         color: `#${color}`,
         borderColor: `#${color}`
       }}
-      onClick={jumpToIssueList}
+      onClick={() => jumpToIssueList(name)}
     >
       <span className={styles['item-name']}>{name}</span>
     </div>
