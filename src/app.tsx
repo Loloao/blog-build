@@ -5,6 +5,7 @@ import Home from './pages/home'
 import Header from './layout/header'
 import Content from './layout/content'
 import Container from './layout/container'
+import SideBar from './layout/sideBar'
 import Tags from './pages/tags'
 import Categories from './pages/categories'
 import About from './pages/about'
@@ -17,8 +18,9 @@ const App = () => {
   return (
     <Router>
       <Container>
-        <Header />
+        <SideBar />
         <Content>
+          <Header />
           <Switch>
             <Route exact path="/tags" component={Tags} />
             <Route exact path="/categories" component={Categories} />

@@ -8,19 +8,6 @@
   box-sizing: border-box;
   height: $header-height;
   color: $primary-font-color;
-  font-size: $header-title-font-size;
-  display: flex;
   justify-content: center;
   border-bottom: $header-border-bottom;
-  .title {
-    position: absolute;
-    left: $header-padding-row;
-    color: $primary-font-color;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color $transition-time-1;
-    &:hover {
-      color: $nav-item-bottom;
-    }
-  }
 }

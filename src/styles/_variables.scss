@@ -1,6 +1,5 @@
 @import 'baseValue.scss';
 
-$background: #2e2e2e;
 $border: 1px solid $primary-red;
 $border-gray: 1px solid rgb(44, 45, 45);
 // Header
@@ -16,6 +15,10 @@ $nav-item-bottom: linear-gradient(to right, #faa964, #e6aa49, #facc4f);
 
 // Content
 $content-background: $background;
+
+// SideBar
+$sideBar-background: $background-light;
+$sideBar-default-width: 350px;
 
 // Home
 $home-background: $background;

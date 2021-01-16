@@ -1,0 +1,17 @@
+@import '@styles/variables';
+
+.sideBar-wrapper {
+  width: $sideBar-default-width;
+  background-color: $sideBar-background;
+  .title {
+    left: $header-padding-row;
+    color: $primary-font-color;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color $transition-time-1;
+    font-size: $header-title-font-size;
+    &:hover {
+      color: $nav-item-bottom;
+    }
+  }
+}
