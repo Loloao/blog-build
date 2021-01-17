@@ -28,6 +28,7 @@ const SideBar = () => {
         <span className={styles['title']} onClick={jumpToHome}>
           {user.name}
         </span>
+        <span>{user.bio}</span>
       </div>
       <div className={styles['nav-wrapper']}>
         <Nav />

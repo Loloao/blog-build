@@ -19,6 +19,11 @@ $content-background: $background;
 // SideBar
 $sideBar-background: $background-light;
 $sideBar-default-width: 350px;
+$profile-padding: 50px 0;
+$avatar-width: 120px;
+$avatar-height: $avatar-width;
+$avatar-border-radius: $avatar-width / 2;
+$avatar-margin-bottom: 10px;
 
 // Home
 $home-background: $background;
