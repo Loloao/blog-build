@@ -21,15 +21,17 @@ const App = () => {
         <SideBar />
         <Content>
           <Header />
-          <Switch>
-            <Route exact path="/tags" component={Tags} />
-            <Route exact path="/categories" component={Categories} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/detail" component={Detail} />
-            <Route exact path="/issueList" component={ShowIssueList} />
-            <Redirect exact path="/" to="/home" />
-          </Switch>
+          <Content>
+            <Switch>
+              <Route exact path="/tags" component={Tags} />
+              <Route exact path="/categories" component={Categories} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/detail" component={Detail} />
+              <Route exact path="/issueList" component={ShowIssueList} />
+              <Redirect exact path="/" to="/home" />
+            </Switch>
+          </Content>
         </Content>
       </Container>
     </Router>

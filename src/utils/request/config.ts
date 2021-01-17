@@ -14,5 +14,6 @@ export const url = {
   getIssueDetailUrl: (issueNumber: number | string): string => `/repos/${USER_NAME}/${REPO_NAME}/issues/${issueNumber}`,
   getLabelsUrl: (): string => `/repos/${USER_NAME}/${REPO_NAME}/labels`,
   getSelectLabelIssuesUrl: (labelListStr: string): string =>
-    `/repos/${USER_NAME}/${REPO_NAME}/issues?labels=${labelListStr}`
+    `/repos/${USER_NAME}/${REPO_NAME}/issues?labels=${labelListStr}`,
+  getUserDetail: (): string => `/users/${USER_NAME}`
 }

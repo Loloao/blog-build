@@ -2,7 +2,7 @@ import Axios from 'axios'
 import { config, url, INIT_HOME_PAGE, INIT_HOME_PER_PAGE } from './config'
 import { issueComment, IssueLabel } from './types'
 import { getIssueImageSrc } from '@/utils'
-import { IssueDetail, LabelDetail } from '@/utils/classes'
+import { IssueDetail, LabelDetail, UserDetail } from '@/utils/classes'
 
 const AxiosIns = Axios.create({
   baseURL: config.BASE_URL,
@@ -52,4 +52,10 @@ export const getSelectLabelIssues = (labelList: string): Promise<IssueDetail[]> 
   return AxiosIns.get<IssueDetail[]>(url.getSelectLabelIssuesUrl(labelList)).then((res) =>
     res.data.map(IssueDetail.create)
   )
+}
+
+export const getUser = (): Promise<UserDetail> => {
+  return AxiosIns.get(url.getUserDetail()).then((res) => {
+    return UserDetail.create(res.data)
+  })
 }
