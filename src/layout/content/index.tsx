@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './styles.scss'
 
 interface props {
   children?: React.ReactNode
 }
 
-const Content: React.FC = (props: props) => {
+const Content = (props: props) => {
   return <div className={styles['content']}>{props.children}</div>
 }
 

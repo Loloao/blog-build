@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Home from './pages/home'
 import Header from './layout/header'
 import Content from './layout/content'
+import Main from './layout/main'
 import Container from './layout/container'
 import SideBar from './layout/sideBar'
 import Tags from './pages/tags'
@@ -21,7 +22,7 @@ const App = () => {
         <SideBar />
         <Content>
           <Header />
-          <Content>
+          <Main>
             <Switch>
               <Route exact path="/tags" component={Tags} />
               <Route exact path="/categories" component={Categories} />
@@ -31,7 +32,7 @@ const App = () => {
               <Route exact path="/issueList" component={ShowIssueList} />
               <Redirect exact path="/" to="/home" />
             </Switch>
-          </Content>
+          </Main>
         </Content>
       </Container>
     </Router>
