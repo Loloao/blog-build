@@ -1,7 +1,7 @@
-@import '@styles/variables';
+@import '@styles';
 
 .header {
-  background-color: $header-background;
+  background-color: $primary-gray;
   display: flex;
   align-items: center;
   padding: $header-padding-col $header-padding-row;
@@ -9,5 +9,6 @@
   height: $header-height;
   color: $primary-font-color;
   justify-content: center;
-  border-bottom: $header-border-bottom;
+  z-index: 3;
+  position: relative;
 }

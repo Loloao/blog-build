@@ -1,6 +1,6 @@
 @import 'baseValue.scss';
 
-$border: 1px solid $primary-red;
+$border: 1px solid $primary-white;
 $border-gray: 1px solid rgb(44, 45, 45);
 // Header
 $header-background: $background;
@@ -15,6 +15,8 @@ $nav-item-bottom: linear-gradient(to right, #faa964, #e6aa49, #facc4f);
 
 // Content
 $content-background: $background;
+$content-article-width: 1300px;
+$content-sidebar-width: 300px;
 
 // SideBar
 $sideBar-background: $background-light;
@@ -38,7 +40,7 @@ $home-item-border-bottom: $border;
 $home-content-padding-top: 5px;
 $home-content-font-size: 16px;
 $home-content-line-height: 25px;
-$home-content-lines-num: 4;
+$home-content-lines-num: 3;
 $home-content-image-width: 200px;
 $home-content-image-height: 145px;
 $home-content-border-radius: 5px;
@@ -48,7 +50,7 @@ $home-footer-margin-top: 7px;
 $home-footer-font-size: 13px;
 $home-footer-user-color: #2077d3;
 $home-footer-user-margin-right: 5px;
-$home-footer-date-color: #bbb;
+$home-footer-date-color: $font-color-2;
 
 // Tags
 $tags-title-font-size: 50px;

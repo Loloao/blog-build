@@ -3,7 +3,7 @@
 .sideBar-wrapper {
   width: $sideBar-default-width;
   background-color: $sideBar-background;
-  background-image: radial-gradient(circle,rgba(250,204,79, .2) 0%, $sideBar-background 100%);
+  background-image: radial-gradient(circle, rgba(250, 204, 79, 0.1) 0%, $sideBar-background 100%);
   min-height: 100vh;
   .profile-wrapper {
     display: flex;

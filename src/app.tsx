@@ -15,6 +15,8 @@ import ShowIssueList from './pages/ShowIssueList'
 import './custom.d.ts'
 import './styles'
 
+const { Article, SideBar: MainSidebar } = Main
+
 const App = () => {
   return (
     <Router>
@@ -23,15 +25,18 @@ const App = () => {
         <Content>
           <Header />
           <Main>
-            <Switch>
-              <Route exact path="/tags" component={Tags} />
-              <Route exact path="/categories" component={Categories} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/detail" component={Detail} />
-              <Route exact path="/issueList" component={ShowIssueList} />
-              <Redirect exact path="/" to="/home" />
-            </Switch>
+            <Article>
+              <Switch>
+                <Route exact path="/tags" component={Tags} />
+                <Route exact path="/categories" component={Categories} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/detail" component={Detail} />
+                <Route exact path="/issueList" component={ShowIssueList} />
+                <Redirect exact path="/" to="/home" />
+              </Switch>
+            </Article>
+            <MainSidebar />
           </Main>
         </Content>
       </Container>
