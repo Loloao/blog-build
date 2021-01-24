@@ -14,7 +14,7 @@ const Detail = () => {
     getIssueDetail(query.issueNumber).then((res) => {
       setIssueDetail(res)
     })
-  }, [])
+  }, [query.issueNumber])
   return (
     <div className={styles['detail-wrapper']}>
       <MarkdownReader text={issueDetail.body} />

@@ -13,6 +13,7 @@
     .update-list {
       padding: 0 0 0 50px;
       li {
+        @include singleLineEllipsis;
         line-height: 30px;
         text-decoration: underline;
         transition: color $transition-time-2;
