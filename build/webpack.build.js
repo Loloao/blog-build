@@ -15,7 +15,6 @@ module.exports = merge(baseConfig, {
       minChunks: 2,
       maxInitialRequests: 5,
       cacheGroups: {
-        // 提取公共模块
         commons: {
           chunks: 'all',
           test: /[\\/]node_modules[\\/]/,

@@ -25,7 +25,7 @@ function ShowIssueList() {
     getListRequest.then((res) => {
       setList(res)
     })
-  }, [])
+  }, [search])
 
   return (
     <div className={styles['issueList-wrapper']}>
