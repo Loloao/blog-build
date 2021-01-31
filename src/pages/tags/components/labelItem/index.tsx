@@ -22,7 +22,6 @@ const LabelItem = (props: Props) => {
     const backgroundAlpha = '0.2'
     const colorRgb = transferSixteenToRgbArr(color)
     const result = `rgba(${colorRgb.join(',')}, ${backgroundAlpha})`
-    console.log(color, result, 'result')
     return result
   }
 

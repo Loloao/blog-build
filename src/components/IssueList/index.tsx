@@ -10,14 +10,12 @@ interface props {
 }
 
 const HomeListItem = (props: props) => {
-  const {
-    issueList
-  } = props
+  const { issueList } = props
   const history = useHistory()
 
   return (
-    <ul>{
-      issueList.map(v => {
+    <ul>
+      {issueList.map((v) => {
         const {
           title,
           labels,
@@ -27,33 +25,34 @@ const HomeListItem = (props: props) => {
           updated_at,
           number
         } = v
-        return <div className={style['issueItem']}>
-          <div className={style['issueContentWrapper']}>
-            <div className={style['issueLabels']}>
-              {labels.map((v) => {
-                return (
-                  <div className={style['label']} key={v.id}>
-                    {v.name}
-                  </div>
-                )
-              })}
+        return (
+          <div className={style['issueItem']} key={v.id}>
+            <div className={style['issueContentWrapper']}>
+              <div className={style['issueLabels']}>
+                {labels.map((v) => {
+                  return (
+                    <div className={style['label']} key={v.id}>
+                      {v.name}
+                    </div>
+                  )
+                })}
+              </div>
+              <span className={style['issueItemTitle']} onClick={() => jumpToIssueDetail(number)}>
+                {title}
+              </span>
+              <p className={style['issueItemContent']} onClick={() => jumpToIssueDetail(number)}>
+                {body}
+              </p>
+              <div className={style['issueItemFooter']}>
+                <span className={style['issueUser']}>{login}</span>
+                <span className={style['issueUpdateDate']}>更新于{dateAgo(Date.parse(updated_at))}</span>
+              </div>
             </div>
-            <span className={style['issueItemTitle']} onClick={() => jumpToIssueDetail(number)}>
-              {title}
-            </span>
-            <p className={style['issueItemContent']} onClick={() => jumpToIssueDetail(number)}>
-              {body}
-            </p>
-            <div className={style['issueItemFooter']}>
-              <span className={style['issueUser']}>{login}</span>
-              <span className={style['issueUpdateDate']}>更新于{dateAgo(Date.parse(updated_at))}</span>
-            </div>
+            {getImage(img_src)}
           </div>
-          {getImage(img_src)}
-        </div>
-      })
-    }</ul>
-
+        )
+      })}
+    </ul>
   )
 
   function jumpToIssueDetail(number: number) {

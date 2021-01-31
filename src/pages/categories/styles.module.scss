@@ -1,0 +1,7 @@
+@import '@styles';
+.categories-wrapper {
+  @include readableWrapper();
+  .categories-title {
+    @include page-title();
+  }
+}

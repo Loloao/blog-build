@@ -20,3 +20,10 @@
   white-space: nowrap; /*禁止换行*/
   text-overflow: ellipsis; /*省略号*/
 }
+
+@mixin page-title {
+  font-size: $page-title-font-size;
+  color: $page-title-color;
+  margin-top: $page-title-margin-top;
+  margin-bottom: $page-title-margin-bottom;
+}

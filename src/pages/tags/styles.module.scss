@@ -2,10 +2,7 @@
 .tags-wrapper {
   @include readableWrapper();
   .tags-title {
-    font-size: $tags-title-font-size;
-    color: $tags-title-color;
-    margin-top: $tags-title-margin-top;
-    margin-bottom: $tags-title-margin-bottom;
+    @include page-title();
   }
   .tags-list {
     display: flex;
