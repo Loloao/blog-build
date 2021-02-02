@@ -63,3 +63,7 @@ export const getUser = (): Promise<UserDetail> => {
 export const getRecentIssues = (): Promise<IssueDetail[]> => {
   return AxiosIns.get<IssueDetail[]>(url.getRecentIssues()).then((res) => res.data.map(IssueDetail.create))
 }
+
+export const getTimelineIssues = (): Promise<IssueDetail[]> => {
+  return AxiosIns.get<IssueDetail[]>(url.getTimelineIssues()).then((res) => res.data.map(IssueDetail.create))
+}

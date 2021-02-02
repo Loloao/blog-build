@@ -27,5 +27,7 @@ export const url = {
   getUserDetail: (): string => `/users/${USER_NAME}`,
 
   getRecentIssues: () =>
-    `/repos/${USER_NAME}/${REPO_NAME}/issues?page=${RECENT_PAGE}&per_page=${RECENT_PER_PAGE}&sort=updated`
+    `/repos/${USER_NAME}/${REPO_NAME}/issues?page=${RECENT_PAGE}&per_page=${RECENT_PER_PAGE}&sort=updated`,
+
+  getTimelineIssues: () => `/repos/${USER_NAME}/${REPO_NAME}/issues?sort=created`
 }

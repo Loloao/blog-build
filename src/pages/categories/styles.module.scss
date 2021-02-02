@@ -1,6 +1,9 @@
 @import '@styles';
+
+
 .categories-wrapper {
   @include readableWrapper();
+  color: white;
   .categories-title {
     @include page-title();
   }

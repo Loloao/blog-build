@@ -1,5 +1,21 @@
 @import '@styles';
 
+@mixin item {
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+}
+
 .timeline-wrapper {
   display: flex;
+  flex-direction: column;
+
+  .title-wrapper {
+    @include item();
+  }
+
+  .link-wrapper {
+    display: flex;
+    @include item();
+  }
 }
