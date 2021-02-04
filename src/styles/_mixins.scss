@@ -27,3 +27,9 @@
   margin-top: $page-title-margin-top;
   margin-bottom: $page-title-margin-bottom;
 }
+
+@mixin verticalCenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}

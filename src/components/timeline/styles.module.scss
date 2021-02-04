@@ -1,21 +1,70 @@
-@import '@styles';
+@import '~@/components/styles';
 
 @mixin item {
-  width: 60px;
-  height: 50px;
-  line-height: 50px;
+  width: $timeline-item-width;
+  height: $timeline-item-height;
+  line-height: $timeline-item-line-height;
 }
 
 .timeline-wrapper {
   display: flex;
   flex-direction: column;
+  color: $timeline-color;
 
   .title-wrapper {
     @include item();
+    position: relative;
+    h3 {
+      font-size: $timeline-title-font-size;
+    }
+    &::after {
+      @include verticalCenter();
+      content: '';
+      right: $timeline-item-right;
+      height: $timeline-title-dot-radius;
+      width: $timeline-title-dot-radius;
+      border: $timeline-title-dot-border;
+      display: block;
+      border-radius: 50%;
+      background-color: $timeline-title-dot-background-color;
+    }
   }
 
   .link-wrapper {
     display: flex;
-    @include item();
+    .link-left {
+      @include item();
+      position: relative;
+      margin-right: 40px;
+      &::after {
+        @include verticalCenter();
+        content: '';
+        right: $timeline-item-right;
+        height: $timeline-link-dot-radius;
+        width: $timeline-link-dot-radius;
+        display: block;
+        border-radius: 50%;
+        background-color: $timeline-link-dot-background-color;
+        border: $timeline-link-dot-border;
+        background-clip:content-box;
+      }
+    }
+    .link-right {
+      @include item();
+      background-color: #666;
+    }
+  }
+}
+
+.hasBottomLine {
+  &::before {
+    content: '';
+    right: -15px;
+    top: $timeline-item-height / 2;
+    width: 5px;
+    background-color: $timeline-item-bottom-line;
+    height: $timeline-item-height;
+    position: absolute;
+    opacity: .5;
   }
 }

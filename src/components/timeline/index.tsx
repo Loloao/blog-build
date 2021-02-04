@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { Link } from 'react-router-dom'
+import classnames from 'classnames'
 
 export interface timelineItem {
   title?: string
@@ -16,15 +17,15 @@ const Timeline = (props: props) => {
   const getData = (item: timelineItem, index: number) => {
     if (item.title) {
       return (
-        <div className={styles['title-wrapper']} key={item.title}>
+        <div className={classnames(styles['title-wrapper'], styles['hasBottomLine'])} key={item.title}>
           <h3>{item.title}</h3>
         </div>
       )
     } else if (item.time && item.link) {
       return (
         <div className={styles['link-wrapper']} key={item.link}>
-          <div>{item.time}</div>
-          <Link path={item.route}>
+          <div className={classnames(styles['link-left'], styles['hasBottomLine'])}>{item.time}</div>
+          <Link path={item.route} className={styles['link-right']}>
             <div>{item.link}</div>
           </Link>
         </div>
