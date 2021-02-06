@@ -5,16 +5,25 @@ $nav-item-padding: 5px 10px;
 $nav-item-fontSize: 18px;
 $nav-item-margin-left: 20px;
 
+// timeline
 $timeline-item-width: 80px;
-$timeline-item-height: 50px;
-$timeline-item-right: -20px;
-$timeline-item-line-height: 50px;
-$timeline-color: $font-color-4;
+$timeline-item-height: 60px;
+$timeline-item-right: -30px;
+$timeline-item-line-height: $timeline-item-height;
+$timeline-color: $font-color-1;
+
 $timeline-title-font-size: 30px;
-$timeline-title-dot-border: 5px solid $font-color-4;
+$timeline-title-dot-border: 5px solid $font-color-1;
 $timeline-title-dot-radius: 5px;
-$timeline-title-dot-background-color: $font-color-3;
+$timeline-title-dot-background-color: $background-light;
+
 $timeline-link-dot-radius: 10px;
-$timeline-link-dot-background-color: $font-color;
+$timeline-link-dot-background-color: $font-color-1;
 $timeline-link-dot-border: 2.5px solid transparent;
-$timeline-item-bottom-line: $font-color-2;
+
+$timeline-link-margin-right: 50px;
+$timeline-link-background: linear-gradient(to left, $background,  $background-light,  $background-light,  $background-light, $background);
+$timeline-item-bottom-line: $font-color-3;
+$timeline-item-bottom-line-width: 5px;
+$timeline-item-bottom-right: -25px;
+

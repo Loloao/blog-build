@@ -4,6 +4,7 @@
   width: $timeline-item-width;
   height: $timeline-item-height;
   line-height: $timeline-item-line-height;
+  text-align: right;
 }
 
 .timeline-wrapper {
@@ -19,6 +20,7 @@
     }
     &::after {
       @include verticalCenter();
+      z-index: 10;
       content: '';
       right: $timeline-item-right;
       height: $timeline-title-dot-radius;
@@ -30,38 +32,51 @@
     }
   }
 
-  .link-wrapper {
-    display: flex;
-    .link-left {
-      @include item();
-      position: relative;
-      margin-right: 40px;
-      &::after {
-        @include verticalCenter();
-        content: '';
-        right: $timeline-item-right;
-        height: $timeline-link-dot-radius;
-        width: $timeline-link-dot-radius;
-        display: block;
-        border-radius: 50%;
-        background-color: $timeline-link-dot-background-color;
-        border: $timeline-link-dot-border;
-        background-clip:content-box;
+  .subline-wrapper {
+    .link-wrapper {
+      display: flex;
+      &:nth-of-type(odd) {
+        background-image: $timeline-link-background;
       }
-    }
-    .link-right {
-      @include item();
-      background-color: #666;
+      .link-left {
+        @include item();
+        position: relative;
+        margin-right: $timeline-link-margin-right;
+        &::after {
+          @include verticalCenter();
+          content: '';
+          z-index: 10;
+          right: $timeline-item-right;
+          height: $timeline-link-dot-radius;
+          width: $timeline-link-dot-radius;
+          display: block;
+          border-radius: 50%;
+          background-color: $timeline-link-dot-background-color;
+          border: $timeline-link-dot-border;
+          background-clip:content-box;
+        }
+      }
+      .link-right {
+        // @include item();
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: $primary-blue;
+        &:hover {
+          color: $primary-red;
+          transition: color $transition-time-2;
+        }
+      }
     }
   }
 }
 
-.hasBottomLine {
+.hasTopLine {
   &::before {
     content: '';
-    right: -15px;
-    top: $timeline-item-height / 2;
-    width: 5px;
+    right: $timeline-item-bottom-right;
+    bottom: $timeline-item-height / 2;
+    width: $timeline-item-bottom-line-width;
     background-color: $timeline-item-bottom-line;
     height: $timeline-item-height;
     position: absolute;
