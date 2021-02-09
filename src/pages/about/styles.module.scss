@@ -1,0 +1,7 @@
+@import '@styles';
+.about-wrapper {
+  @include readableWrapper();
+  .about-title {
+    @include page-title();
+  }
+}
