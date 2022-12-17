@@ -1,7 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import React, { useLayoutEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
-import styles from './styles.module.scss'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
@@ -33,7 +32,7 @@ const MarkdownReader = (props: Props) => {
         })
       })
   })
-  return <ReactMarkdown children={text} className={styles['reader']} renderers={renderers} />
+  return <ReactMarkdown children={text}  renderers={renderers} />
 }
 
 export default MarkdownReader

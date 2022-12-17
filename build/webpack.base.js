@@ -54,24 +54,6 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
-        exclude: /node_modules/,
-        loader: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          // '@teamsupercell/typings-for-css-modules-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[path][name]__[local]--[hash:base64:5]'
-              }
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.css$/,
         include: /normalize.css/,
         loader: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader']

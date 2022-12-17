@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { IssueDetail } from '@/utils/classes'
-
-import styles from './styles.scss'
 import { getIssues, getMore } from '@/utils/request'
 import IssueList from '@/components/IssueList'
 import ShowMore from '@/components/showMore'
@@ -30,7 +28,7 @@ const Home = () => {
     })
   }
   return (
-    <div className={styles['home-wrapper']}>
+    <div>
       <IssueList issueList={issueList} />
       <ShowMore onShowMore={showMore} isMore={isMore} isLoading={isShowMoreLoading} />
     </div>

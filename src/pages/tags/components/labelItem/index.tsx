@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './styles.module.scss'
 import { LabelDetail } from '@/utils/classes'
 import { useHistory } from 'react-router-dom'
 import { stringifySearch, transferSixteenToRgbArr } from '@/utils'
@@ -27,7 +26,7 @@ const LabelItem = (props: Props) => {
 
   return (
     <div
-      className={styles['item-wrapper']}
+      
       style={{
         color: `#${color}`,
         borderColor: `#${color}`,
@@ -35,7 +34,7 @@ const LabelItem = (props: Props) => {
       }}
       onClick={() => jumpToIssueList(name)}
     >
-      <span title={name} className={styles['item-name']}>
+      <span title={name} >
         {name}
       </span>
     </div>

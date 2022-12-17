@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styles from './styles.module.scss'
 import { useHistory } from 'react-router-dom'
 import { getIssueDetail } from '@/utils/request'
 import { parseSearch } from '@/utils'
@@ -16,7 +15,7 @@ const Detail = () => {
     })
   }, [query.issueNumber])
   return (
-    <div className={styles['detail-wrapper']}>
+    <div >
       <MarkdownReader text={issueDetail.body} />
     </div>
   )

@@ -4,7 +4,6 @@ import { IssueDetail } from '@/utils/classes'
 import { getSelectLabelIssues } from '@/utils/request'
 import { useHistory } from 'react-router-dom'
 import { parseSearch } from '@/utils'
-import styles from './styles.module.scss'
 
 function ShowIssueList() {
   const [list, setList] = useState<IssueDetail[]>([])
@@ -28,7 +27,7 @@ function ShowIssueList() {
   }, [search])
 
   return (
-    <div className={styles['issueList-wrapper']}>
+    <div >
       <IssueList issueList={list} />
     </div>
   )

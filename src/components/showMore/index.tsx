@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './style.m.scss'
 import { RequestLoading } from '@/components/loading'
 
 interface pageProps {
@@ -18,8 +17,8 @@ const ShowMore = (props: pageProps) => {
     } else {
       result = (
         <div>
-          <span className={styles['main-text']}>加载更多</span>
-          <i className={`fas fa-angle-double-down ${styles['icon-text']}`}></i>
+          <span>加载更多</span>
+          <i className={'fas fa-angle-double-down'}></i>
         </div>
       )
     }
@@ -29,17 +28,13 @@ const ShowMore = (props: pageProps) => {
   const getContent = () => {
     let result
     if (isMore) {
-      result = (
-        <div className={styles['showMore-button']} onClick={onShowMore}>
-          {showContent()}
-        </div>
-      )
+      result = <div onClick={onShowMore}>{showContent()}</div>
     } else {
       result = null
     }
     return result
   }
-  return <div className={styles['showMore-wrapper']}>{getContent()}</div>
+  return <div>{getContent()}</div>
 }
 
 export default ShowMore

@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import styles from './styles.scss'
 
 const navList = [
   { id: 0, title: '首页', link: '/home', icon: 'fa-home' },
@@ -11,14 +10,12 @@ const navList = [
 
 const Nav = () => {
   return (
-    <ul className={styles['navList']}>
+    <ul>
       {navList.map((v) => {
         return (
-          <NavLink to={v.link} activeClassName={styles['activeItem']} key={v.id} className={styles['navItem']}>
+          <NavLink to={v.link} key={v.id}>
             <li>
-              <span className={styles['navItemIcon']}>
-                <i className={`fas ${v.icon}`}></i>
-              </span>
+              <span></span>
               {v.title}
             </li>
           </NavLink>

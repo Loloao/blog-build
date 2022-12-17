@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import styles from './styles.scss'
 import Article from './components/article'
 import SideBar from './components/sidebar'
 
@@ -13,7 +12,7 @@ type ContentComp = FC & {
 }
 
 const Content: ContentComp = (props: props) => {
-  return <div className={styles['content']}>{props.children}</div>
+  return <div>{props.children}</div>
 }
 
 Content.Article = Article

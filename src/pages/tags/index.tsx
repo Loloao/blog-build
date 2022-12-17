@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styles from './styles.module.scss'
 import { getAllLabels } from '@/utils/request'
 import { LabelDetail } from '@/utils/classes'
 
@@ -13,9 +12,9 @@ const Tags = () => {
     })
   }, [])
   return (
-    <div className={styles['tags-wrapper']}>
-      <h2 className={styles['tags-title']}>标签</h2>
-      <ul className={styles['tags-list']}>
+    <div >
+      <h2 >标签</h2>
+      <ul >
         {allLabels.map((v) => {
           return <LabelItem labelDetail={v} key={v.id} />
         })}

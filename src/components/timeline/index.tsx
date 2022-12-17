@@ -1,7 +1,5 @@
 import React from 'react'
-import styles from './styles.module.scss'
 import { Link } from 'react-router-dom'
-import classnames from 'classnames'
 
 export interface timelineItem {
   title?: string
@@ -11,6 +9,7 @@ export interface sublineItem {
   link?: string
   route?: string
   time?: string
+  title?: number
 }
 
 interface props {
@@ -18,20 +17,19 @@ interface props {
 }
 
 const Timeline = (props: props) => {
-  const formatTime = (time) => `${new Date(time).getMonth() + 1} 月 ${new Date(time).getUTCDate() + 1} 日`
-  const sortSublineByTime = (data) =>
+  const formatTime = (time: string) => `${new Date(time).getMonth() + 1} 月 ${new Date(time).getUTCDate() + 1} 日`
+  const sortSublineByTime = (data: sublineItem[]) =>
     data.sort((a, b) => {
-      const prev = new Date(a.time).getTime()
-      const next = new Date(b.time).getTime()
+      const prev = new Date(a.time!).getTime()
+      const next = new Date(b.time!).getTime()
       return next - prev
     })
-  const transferDate = (times: string) => {
+  const transferDate = (times: sublineItem[]) => {
     const years = new Map()
     sortSublineByTime(times)
-    console.log(JSON.parse(JSON.stringify(times)), 'times')
-    return times.reduce<timelineItem | sublineItem[]>((sum, next, index) => {
-      const year = new Date(next.time).getFullYear()
-      if (!years.has(year)) {
+    return times.reduce<sublineItem[]>((sum, next, index) => {
+      const year = new Date(next.time!).getFullYear()
+      if (!years.has(year) && Array.isArray(sum)) {
         years.set(year, sum.length)
         sum.push({ title: year })
       } else {
@@ -53,33 +51,18 @@ const Timeline = (props: props) => {
   const getData = (item1: timelineItem | sublineItem[], index: number) => {
     if (item1.title) {
       return (
-        <div
-          className={classnames({
-            [styles['title-wrapper']]: true,
-            [styles['hasTopLine']]: !(index === 0)
-          })}
-          key={item1.title}
-        >
+        <div key={item1.title}>
           <h3>{item1.title}</h3>
         </div>
       )
     } else {
       return (
-        <ul className={styles['subline-wrapper']} key={index}>
+        <ul key={index}>
           {item1.map((item, index, arr) => {
             return (
-              <li className={styles['link-wrapper']} key={item.link}>
-                <div
-                  className={classnames({
-                    [styles['link-left']]: true,
-                    [styles['hasTopLine']]: true
-                  })}
-                >
-                  {item.time}
-                </div>
-                <Link to={item.route} className={styles['link-right']}>
-                  {item.link}
-                </Link>
+              <li key={item.link}>
+                <div>{item.time}</div>
+                <Link to={item.route}>{item.link}</Link>
               </li>
             )
           })}
@@ -88,7 +71,7 @@ const Timeline = (props: props) => {
     }
   }
 
-  return <div className={styles['timeline-wrapper']}>{transferDate(props.data).map(getData)}</div>
+  return <div>{transferDate(props.data).map(getData)}</div>
 }
 
 const data = [

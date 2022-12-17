@@ -1,6 +1,5 @@
 import React from 'react'
 import { IssueDetail } from '@/utils/classes'
-import style from './styles.m.scss'
 import dateAgo from '@/utils/time/dateAgo'
 import { stringifySearch } from '@/utils'
 import { useHistory } from 'react-router-dom'
@@ -26,26 +25,18 @@ const HomeListItem = (props: props) => {
           number
         } = v
         return (
-          <div className={style['issueItem']} key={v.id}>
-            <div className={style['issueContentWrapper']}>
-              <div className={style['issueLabels']}>
+          <div key={v.id}>
+            <div>
+              <div>
                 {labels.map((v) => {
-                  return (
-                    <div className={style['label']} key={v.id}>
-                      {v.name}
-                    </div>
-                  )
+                  return <div key={v.id}>{v.name}</div>
                 })}
               </div>
-              <span className={style['issueItemTitle']} onClick={() => jumpToIssueDetail(number)}>
-                {title}
-              </span>
-              <p className={style['issueItemContent']} onClick={() => jumpToIssueDetail(number)}>
-                {body}
-              </p>
-              <div className={style['issueItemFooter']}>
-                <span className={style['issueUser']}>{login}</span>
-                <span className={style['issueUpdateDate']}>更新于{dateAgo(Date.parse(updated_at))}</span>
+              <span onClick={() => jumpToIssueDetail(number)}>{title}</span>
+              <p onClick={() => jumpToIssueDetail(number)}>{body}</p>
+              <div>
+                <span>{login}</span>
+                <span>更新于{dateAgo(Date.parse(updated_at))}</span>
               </div>
             </div>
             {getImage(img_src)}
@@ -61,7 +52,7 @@ const HomeListItem = (props: props) => {
 
   function getImage(img_src?: string) {
     if (img_src) {
-      return <div className={style['mainImg']} style={{ backgroundImage: `url(${img_src})` }}></div>
+      return <div style={{ backgroundImage: `url(${img_src})` }}></div>
     } else {
       return null
     }

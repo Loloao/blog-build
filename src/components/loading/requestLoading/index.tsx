@@ -1,9 +1,8 @@
 import React from 'react'
-import styles from './style.m.scss'
 
 const requestLoading: React.FC = () => {
   return (
-    <div className={styles['loading-wrapper']}>
+    <div >
       <span></span>
       <span></span>
       <span></span>

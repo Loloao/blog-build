@@ -12,8 +12,6 @@ import Categories from './pages/categories'
 import About from './pages/about'
 import Detail from './pages/detail'
 import ShowIssueList from './pages/ShowIssueList'
-import './custom.d.ts'
-import './styles'
 
 const { Article, SideBar: MainSidebar } = Main
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styles from './styles.module.scss'
 import { getRecentIssues, getAllLabels } from '@/utils/request'
 import { IssueDetail, LabelDetail } from '@/utils/classes'
 import { useHistory } from 'react-router-dom'
@@ -31,10 +30,10 @@ const Sidebar = () => {
   }
 
   return (
-    <div className={styles['content-sidebar']}>
-      <div className={styles['recent-update']}>
+    <div>
+      <div>
         <h3>最近更新</h3>
-        <ul className={styles['update-list']}>
+        <ul>
           {issueList.map((v) => {
             return (
               <li key={v.id} onClick={() => jumpToDetail(v)} title={v.title}>
@@ -44,9 +43,9 @@ const Sidebar = () => {
           })}
         </ul>
       </div>
-      <div className={styles['trend-tags']}>
+      <div>
         <h3>标签趋势</h3>
-        <ul className={styles['tags-list']}>
+        <ul>
           {labelList.map((v) => {
             return (
               <li key={v.id} onClick={() => jumpToIssueList(v)} title={v.name}>
