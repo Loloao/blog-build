@@ -1,9 +1,8 @@
-const webpack = require('webpack');
-const path = require('path');
-const { merge } = require('webpack-merge');
-const baseConfig = require('./webpack.base');
+const path = require('path')
+const { merge } = require('webpack-merge')
+const baseConfig = require('./webpack.base')
 
-const getAbsolutePath = (str) => path.resolve(__dirname, str);
+const getAbsolutePath = (str) => path.resolve(__dirname, str)
 
 module.exports = merge(baseConfig, {
   mode: 'development',
@@ -11,7 +10,7 @@ module.exports = merge(baseConfig, {
     port: 8001,
     hot: true,
     compress: true,
-    contentBase: '../dist',
+    // contentBase: '../dist',
     historyApiFallback: true
   },
   stats: {
@@ -25,6 +24,5 @@ module.exports = merge(baseConfig, {
     assets: false,
     version: false
   },
-  devtool: 'cheap-eval-inline-source-map',
-  plugins: [new webpack.HotModuleReplacementPlugin()]
-});
+  devtool: 'cheap-module-source-map'
+})

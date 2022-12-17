@@ -2,15 +2,17 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const config = require('./config')
-const Webpack = require('webpack')
 
 const getAbsolutePath = (str) => path.resolve(__dirname, str)
 const isDev = process.env.NODE_ENV === config.env.development
+const cssLoaderConfig = {
+  use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+}
 
 const webpackConfig = {
   entry: getAbsolutePath('../src/index.tsx'),
   output: {
-    filename: 'bundle.[hash].js',
+    filename: 'bundle.js',
     path: getAbsolutePath('../dist')
   },
   resolve: {
@@ -49,32 +51,27 @@ const webpackConfig = {
         exclude: /node-modules/,
         include: getAbsolutePath('../src'),
         options: {
-          plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-transform-runtime', 'transform-class-properties'],
+          plugins: [
+            '@babel/plugin-syntax-dynamic-import',
+            '@babel/plugin-transform-runtime',
+            'transform-class-properties'
+          ],
           presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
         }
       },
       {
         test: /\.css$/,
-        include: /normalize.css/,
-        loader: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader']
-      },
-      {
-        test: /\.css$/,
-        include: /node_modules/,
-        exclude: /normalize.css/,
-        loader: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader']
+        ...cssLoaderConfig
       }
     ]
   },
-  devtool: 'cheap-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'my-blog',
       filename: 'index.html',
       template: getAbsolutePath('../index.html'),
       inject: true
-    }),
-    new Webpack.WatchIgnorePlugin([/(c|sa|sc)ss\.d\.ts$/])
+    })
   ]
 }
 

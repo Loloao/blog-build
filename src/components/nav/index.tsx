@@ -10,7 +10,7 @@ const navList = [
 
 const Nav = () => {
   return (
-    <ul>
+    <ul className="bg-black text-slate-400">
       {navList.map((v) => {
         return (
           <NavLink to={v.link} key={v.id}>

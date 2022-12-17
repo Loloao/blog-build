@@ -12,6 +12,8 @@ import Categories from './pages/categories'
 import About from './pages/about'
 import Detail from './pages/detail'
 import ShowIssueList from './pages/ShowIssueList'
+// import 'tailwindcss/tailwind.css'
+import './app.css'
 
 const { Article, SideBar: MainSidebar } = Main
 
