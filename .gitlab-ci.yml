@@ -1,0 +1,9 @@
+stages:
+  - build
+  - test
+  - deploy
+
+installDep:
+  stage: build
+  script:
+    - echo "execute npm run install"
