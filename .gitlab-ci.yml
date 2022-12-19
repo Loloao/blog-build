@@ -33,9 +33,11 @@ test:
     - install
 
 deploy:
-  image: git:latest
+  image: ubuntu:latest
   stage: deploy
   script:
+    - apt-get -y update
+    - apt-get -y install git
     - cd ./dist
     - git init
     - git config --global user.email 1312213036@qq.com
