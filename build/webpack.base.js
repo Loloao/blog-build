@@ -12,7 +12,7 @@ const cssLoaderConfig = {
 const webpackConfig = {
   entry: getAbsolutePath('../src/index.tsx'),
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[name].js',
     path: getAbsolutePath('../dist')
   },
   resolve: {
