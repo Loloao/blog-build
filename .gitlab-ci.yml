@@ -37,7 +37,7 @@ deploy:
   stage: deploy
   script:
     - apt-get -y update
-    - apt install git
+    - apt -y install git
     - git config --global http.sslVerify false
     - git config --global http.postBuffer 1048576000
     - mkdir forPushToGithub
