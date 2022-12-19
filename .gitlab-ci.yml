@@ -33,6 +33,13 @@ test:
     - install
 
 deploy:
+  image: git:latest
   stage: deploy
   script:
-    - echo "deploy it!!"
+    - cd ./dist
+    - git init
+    - git config --global user.email 1312213036@qq.com
+    - git config --global user.name loloao
+    - git add .
+    - "git commit -m ':arrow_up: update blog resource'"
+    - echo "test git"
