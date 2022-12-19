@@ -1,18 +1,36 @@
 stages:
-  - test
+  - install
   - build
+  - test
   - deploy
 
-test:
-  stage: test
+install:
+  stage: install
   script:
     - npm i
-    - npm run test
+  artifacts:
+    untracked: true
+    expire_in: '30 mins'
+    paths:
+      - node_modules
 
 build:
   stage: build
   script:
     - npm run build
+  artifacts:
+    paths:
+      - 'dist'
+    expire_in: '30 mins'
+  dependencies:
+    - install
+
+test:
+  stage: test
+  script:
+    - npm run test
+  dependencies:
+    - install
 
 deploy:
   stage: deploy
