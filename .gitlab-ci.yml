@@ -38,10 +38,14 @@ deploy:
   script:
     - apt-get -y update
     - apt-get -y install git
-    - cd ./dist
+    - mkdir forPushToGithub
+    - cd forPushToGithub
     - git init
-    - git config --global user.email 1312213036@qq.com
-    - git config --global user.name loloao
+    - git remote add origin https:$GITHUB_TOKEN@github.com/Loloao/my-blog.git
+    - git pull
+    - git switch master
+    - rm -r *
+    - mv ../dist/* .
     - git add .
     - "git commit -m ':arrow_up: update blog resource'"
-    - echo "test git"
+    - 'git push'
