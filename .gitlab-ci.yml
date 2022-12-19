@@ -45,7 +45,7 @@ deploy:
     - git init
     - git remote add origin 'https://$GITHUB_TOKEN@github.com/Loloao/my-blog.git'
     - git config --global http.version HTTP/1.1
-    - git pull
+    - git pull origin master
     - git switch master
     - rm -r *
     - mv ../dist/* .
